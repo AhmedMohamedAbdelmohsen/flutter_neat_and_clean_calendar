@@ -331,7 +331,7 @@ class _CalendarState extends State<Calendar> {
         ),
       );
       rightArrow = Container(
-        padding: EdgeInsets.all(8),
+        padding: EdgeInsets.all(1),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8.0),
           // Adjust the radius as needed
