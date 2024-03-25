@@ -492,7 +492,7 @@ class _CalendarState extends State<Calendar> {
       (day) {
         dayWidgets.add(
           Container(
-            margin: EdgeInsets.symmetric(vertical: 25),
+            margin: EdgeInsets.symmetric(vertical: 6),
             child: NeatCleanCalendarTile(
               defaultDayColor: widget.defaultDayColor,
               defaultOutOfMonthDayColor: widget.defaultOutOfMonthDayColor,
@@ -540,7 +540,7 @@ class _CalendarState extends State<Calendar> {
           // Use the dayBuilder widget passed as parameter to render the date tile
           dayWidgets.add(
             Container(
-              margin: EdgeInsets.symmetric(vertical: 25),
+              margin: EdgeInsets.symmetric(vertical: 6),
               child: NeatCleanCalendarTile(
                 defaultDayColor: widget.defaultDayColor,
                 defaultOutOfMonthDayColor: widget.defaultOutOfMonthDayColor,
@@ -559,7 +559,7 @@ class _CalendarState extends State<Calendar> {
         } else {
           dayWidgets.add(
             Container(
-              margin: EdgeInsets.symmetric(vertical: 25),
+              margin: EdgeInsets.symmetric(vertical: 6),
               child: NeatCleanCalendarTile(
                   defaultDayColor: widget.defaultDayColor,
                   defaultOutOfMonthDayColor: widget.defaultOutOfMonthDayColor,
