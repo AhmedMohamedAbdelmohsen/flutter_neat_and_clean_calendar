@@ -97,7 +97,6 @@ class NeatCleanCalendarTile extends StatelessWidget {
           child: Container(
             // If this tile is the selected date, draw a colored circle on it. The circle is filled with
             // the color passed with the selectedColor parameter or red color.
-            margin: EdgeInsets.all(2),
             decoration: isSelected && date != null
                 ? BoxDecoration(
                     shape: BoxShape.rectangle,
