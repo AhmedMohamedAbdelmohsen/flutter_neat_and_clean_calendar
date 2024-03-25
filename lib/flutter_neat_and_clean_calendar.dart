@@ -319,6 +319,8 @@ class _CalendarState extends State<Calendar> {
 
     if (!widget.hideArrows) {
       leftArrow = Container(
+        height: 35,
+        width: 35,
         padding: EdgeInsets.all(8),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8.0),
