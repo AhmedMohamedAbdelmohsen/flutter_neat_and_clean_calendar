@@ -539,23 +539,9 @@ class _CalendarState extends State<Calendar> {
         if (this.widget.dayBuilder != null) {
           // Use the dayBuilder widget passed as parameter to render the date tile
           dayWidgets.add(
-            NeatCleanCalendarTile(
-              defaultDayColor: widget.defaultDayColor,
-              defaultOutOfMonthDayColor: widget.defaultOutOfMonthDayColor,
-              selectedColor: widget.selectedColor,
-              selectedTodayColor: widget.selectedTodayColor,
-              todayColor: widget.todayColor,
-              eventColor: widget.eventColor,
-              eventDoneColor: widget.eventDoneColor,
-              events: eventsMap![day],
-              child: widget.dayBuilder!(context, day),
-              date: day,
-              onDateSelected: () => handleSelectedDateAndUserCallback(day),
-            ),
-          );
-        } else {
-          dayWidgets.add(
-            NeatCleanCalendarTile(
+            Container(
+              margin: EdgeInsets.symmetric(vertical: 25),
+              child: NeatCleanCalendarTile(
                 defaultDayColor: widget.defaultDayColor,
                 defaultOutOfMonthDayColor: widget.defaultOutOfMonthDayColor,
                 selectedColor: widget.selectedColor,
@@ -564,11 +550,31 @@ class _CalendarState extends State<Calendar> {
                 eventColor: widget.eventColor,
                 eventDoneColor: widget.eventDoneColor,
                 events: eventsMap![day],
-                onDateSelected: () => handleSelectedDateAndUserCallback(day),
+                child: widget.dayBuilder!(context, day),
                 date: day,
-                dateStyles: configureDateStyle(monthStarted, monthEnded),
-                isSelected: Utils.isSameDay(selectedDate, day),
-                inMonth: day.month == selectedDate.month),
+                onDateSelected: () => handleSelectedDateAndUserCallback(day),
+              ),
+            ),
+          );
+        } else {
+          dayWidgets.add(
+            Container(
+              margin: EdgeInsets.symmetric(vertical: 25),
+              child: NeatCleanCalendarTile(
+                  defaultDayColor: widget.defaultDayColor,
+                  defaultOutOfMonthDayColor: widget.defaultOutOfMonthDayColor,
+                  selectedColor: widget.selectedColor,
+                  selectedTodayColor: widget.selectedTodayColor,
+                  todayColor: widget.todayColor,
+                  eventColor: widget.eventColor,
+                  eventDoneColor: widget.eventDoneColor,
+                  events: eventsMap![day],
+                  onDateSelected: () => handleSelectedDateAndUserCallback(day),
+                  date: day,
+                  dateStyles: configureDateStyle(monthStarted, monthEnded),
+                  isSelected: Utils.isSameDay(selectedDate, day),
+                  inMonth: day.month == selectedDate.month),
+            ),
           );
         }
       },
