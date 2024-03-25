@@ -318,31 +318,13 @@ class _CalendarState extends State<Calendar> {
     var jumpDateIcon;
 
     if (!widget.hideArrows) {
-      leftArrow = Container(
-        height: 35,
-        width: 35,
-        padding: EdgeInsets.all(8),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(8.0),
-          // Adjust the radius as needed
-          border: Border.all(color: Color(0xffCED3DE)), // Set border color
-        ),
-        child: PlatformIconButton(
-          onPressed: isExpanded ? () => previousMonth(true) : previousWeek,
-          icon: Icon(Icons.chevron_left),
-        ),
+      leftArrow = PlatformIconButton(
+        onPressed: isExpanded ? () => previousMonth(true) : previousWeek,
+        icon: Icon(Icons.chevron_left,size: 16),
       );
-      rightArrow = Container(
-        padding: EdgeInsets.all(1),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(8.0),
-          // Adjust the radius as needed
-          border: Border.all(color: Color(0xffCED3DE)), // Set border color
-        ),
-        child: PlatformIconButton(
-          onPressed: isExpanded ? () => nextMonth(true) : nextWeek,
-          icon: Icon(Icons.chevron_right),
-        ),
+      rightArrow = PlatformIconButton(
+        onPressed: isExpanded ? () => nextMonth(true) : nextWeek,
+        icon: Icon(Icons.chevron_right,size: 16),
       );
     } else {
       leftArrow = Container();
@@ -427,8 +409,7 @@ class _CalendarState extends State<Calendar> {
                       .format(_selectedDate);
                   displayMonth =
                       DateFormat('MMMM', widget.locale).format(_selectedDate);
-                  displayYear =
-                      DateFormat('yyyy', widget.locale).format(_selectedDate);
+                  displayYear = DateFormat('yyyy', widget.locale).format(_selectedDate);
                   _selectedEvents = eventsMap?[DateTime(_selectedDate.year,
                           _selectedDate.month, _selectedDate.day)] ??
                       [];
@@ -883,7 +864,8 @@ class _CalendarState extends State<Calendar> {
       selectedMonthsDays = _daysInMonth(_selectedDate);
       var monthFormat =
           DateFormat('MMMM yyyy', widget.locale).format(_selectedDate);
-      displayMonth = DateFormat('MMMM', widget.locale).format(_selectedDate);
+      displayMonth =
+          DateFormat('MMMM', widget.locale).format(_selectedDate);
       displayYear = DateFormat('yyyy', widget.locale).format(_selectedDate);
       _selectedEvents = eventsMap?[DateTime(
               _selectedDate.year, _selectedDate.month, _selectedDate.day)] ??
@@ -909,7 +891,8 @@ class _CalendarState extends State<Calendar> {
       selectedMonthsDays = _daysInMonth(_selectedDate);
       var monthFormat =
           DateFormat('MMMM yyyy', widget.locale).format(_selectedDate);
-      displayMonth = DateFormat('MMMM', widget.locale).format(_selectedDate);
+      displayMonth =
+          DateFormat('MMMM', widget.locale).format(_selectedDate);
       displayYear = DateFormat('yyyy', widget.locale).format(_selectedDate);
       _selectedEvents = eventsMap?[DateTime(
               _selectedDate.year, _selectedDate.month, _selectedDate.day)] ??
@@ -951,7 +934,8 @@ class _CalendarState extends State<Calendar> {
               .toList();
       var monthFormat =
           DateFormat('MMMM yyyy', widget.locale).format(_selectedDate);
-      displayMonth = DateFormat('MMMM', widget.locale).format(_selectedDate);
+      displayMonth =
+          DateFormat('MMMM', widget.locale).format(_selectedDate);
       displayYear = DateFormat('yyyy', widget.locale).format(_selectedDate);
       _selectedEvents = eventsMap?[DateTime(
               _selectedDate.year, _selectedDate.month, _selectedDate.day)] ??
@@ -981,7 +965,8 @@ class _CalendarState extends State<Calendar> {
       selectedMonthsDays = _daysInMonth(_selectedDate);
       var monthFormat =
           DateFormat('MMMM yyyy', widget.locale).format(_selectedDate);
-      displayMonth = DateFormat('MMMM', widget.locale).format(_selectedDate);
+      displayMonth =
+          DateFormat('MMMM', widget.locale).format(_selectedDate);
       displayYear = DateFormat('yyyy', widget.locale).format(_selectedDate);
       _selectedEvents = eventsMap?[DateTime(
               _selectedDate.year, _selectedDate.month, _selectedDate.day)] ??
