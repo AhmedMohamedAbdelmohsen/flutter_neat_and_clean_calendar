@@ -492,7 +492,7 @@ class _CalendarState extends State<Calendar> {
       (day) {
         dayWidgets.add(
           Container(
-            margin: EdgeInsets.symmetric(vertical: 2),
+            margin: EdgeInsets.symmetric(vertical: 6),
             child: NeatCleanCalendarTile(
               defaultDayColor: widget.defaultDayColor,
               defaultOutOfMonthDayColor: widget.defaultOutOfMonthDayColor,
