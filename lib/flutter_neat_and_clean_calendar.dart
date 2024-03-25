@@ -491,23 +491,26 @@ class _CalendarState extends State<Calendar> {
     widget.weekDays.forEach(
       (day) {
         dayWidgets.add(
-          NeatCleanCalendarTile(
-            defaultDayColor: widget.defaultDayColor,
-            defaultOutOfMonthDayColor: widget.defaultOutOfMonthDayColor,
-            selectedColor: widget.selectedColor,
-            selectedTodayColor: widget.selectedTodayColor,
-            todayColor: widget.todayColor,
-            eventColor: widget.eventColor,
-            eventDoneColor: widget.eventDoneColor,
-            events: eventsMap![day],
-            isDayOfWeek: true,
-            dayOfWeek: day,
-            dayOfWeekStyle: widget.dayOfWeekStyle ??
-                TextStyle(
-                  color: widget.selectedColor,
-                  fontWeight: FontWeight.w500,
-                  fontSize: 11,
-                ),
+          Container(
+            margin: EdgeInsets.symmetric(vertical: 2),
+            child: NeatCleanCalendarTile(
+              defaultDayColor: widget.defaultDayColor,
+              defaultOutOfMonthDayColor: widget.defaultOutOfMonthDayColor,
+              selectedColor: widget.selectedColor,
+              selectedTodayColor: widget.selectedTodayColor,
+              todayColor: widget.todayColor,
+              eventColor: widget.eventColor,
+              eventDoneColor: widget.eventDoneColor,
+              events: eventsMap![day],
+              isDayOfWeek: true,
+              dayOfWeek: day,
+              dayOfWeekStyle: widget.dayOfWeekStyle ??
+                  TextStyle(
+                    color: widget.selectedColor,
+                    fontWeight: FontWeight.w500,
+                    fontSize: 11,
+                  ),
+            ),
           ),
         );
       },
