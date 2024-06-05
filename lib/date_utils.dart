@@ -110,6 +110,14 @@ class Utils {
     return a.year == b.year && a.month == b.month && a.day == b.day;
   }
 
+  static bool isWeekend(DateTime date) {
+    // Get the day of the week from the date (Monday is 1, Sunday is 7)
+    int dayOfWeek = date.weekday;
+
+    // Check if the day is Friday (5) or Saturday (6)
+    return dayOfWeek == 5 || dayOfWeek == 6;
+  }
+
   static bool isSameWeek(DateTime a, DateTime b) {
     /// Handle Daylight Savings by setting hour to 12:00 Noon
     /// rather than the default of Midnight
