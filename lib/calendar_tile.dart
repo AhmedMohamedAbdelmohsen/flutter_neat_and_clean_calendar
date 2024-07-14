@@ -98,7 +98,7 @@ class NeatCleanCalendarTile extends StatelessWidget {
           // the color passed with the selectedColor parameter or red color.
           decoration: isSelected && date != null
               ? BoxDecoration(
-                  shape: BoxShape.circle,
+                  shape: BoxShape.rectangle,borderRadius: BorderRadius.all(Radius.circular(10)),
                   color: selectedColor != null
                       ? Utils.isSameDay(this.date!, DateTime.now())
                           ? selectedTodayColor != null
