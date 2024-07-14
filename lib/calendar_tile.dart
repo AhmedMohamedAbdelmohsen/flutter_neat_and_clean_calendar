@@ -90,6 +90,7 @@ class NeatCleanCalendarTile extends StatelessWidget {
       // Here the date tiles get rendered. Initially eventCount is set to 0.
       // Every date tile can show up to three dots representing an event.
       int eventCount = 0;
+      print('hiiiiiiiiiiiiiiiii 1 ${events?.elementAtOrNull(0)?.summary}');
       return GestureDetector(
         onTap: onDateSelected, // react on tapping
         child: Container(
@@ -144,13 +145,13 @@ class NeatCleanCalendarTile extends StatelessWidget {
                       : Utils.isSameDay(this.date!, DateTime.now())
                           ? todayColor
                           : inMonth
-                              ? (defaultDayColor != null
+                              ?((events?.elementAtOrNull(0)?.summary == 'weekend')? Color(0xFF8c8c8c): (defaultDayColor != null
                                   ? defaultDayColor
                                   : events != null &&
                                           events!.isNotEmpty &&
                                           icon != ''
                                       ? Colors.white
-                                      : Colors.black)
+                                      : Colors.black))
                               : (defaultOutOfMonthDayColor != null
                                   ? defaultOutOfMonthDayColor
                                   : Colors.grey),
@@ -162,6 +163,8 @@ class NeatCleanCalendarTile extends StatelessWidget {
                   ? Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: events!.map((event) {
+                        print('hiiiiiiiiiiiiiiiii 2 ${event.summary}');
+
                         eventCount++;
                         // Show a maximum of 3 dots.
                         if (eventCount > 3 || event.summary == 'weekend') return Container();
