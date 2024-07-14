@@ -144,7 +144,7 @@ class NeatCleanCalendarTile extends StatelessWidget {
                       : Utils.isSameDay(this.date!, DateTime.now())
                           ? todayColor
                           : inMonth
-                              ?(events!.elementAtOrNull(0)?.summary == 'weekend' ? Color(0xFF8c8c8c): (defaultDayColor != null
+                              ?(events?.elementAtOrNull(0)?.summary == 'weekend' ? Color(0xFF8c8c8c): (defaultDayColor != null
                                   ? defaultDayColor
                                   : events != null &&
                                           events!.isNotEmpty &&
