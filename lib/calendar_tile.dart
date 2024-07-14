@@ -144,13 +144,13 @@ class NeatCleanCalendarTile extends StatelessWidget {
                       : Utils.isSameDay(this.date!, DateTime.now())
                           ? todayColor
                           : inMonth
-                              ? defaultDayColor != null
+                              ?(events!.elementAtOrNull(0)?.summary == 'weekend' ? Color(0xFF8c8c8c): (defaultDayColor != null
                                   ? defaultDayColor
                                   : events != null &&
                                           events!.isNotEmpty &&
                                           icon != ''
                                       ? Colors.white
-                                      : Colors.black
+                                      : Colors.black))
                               : (defaultOutOfMonthDayColor != null
                                   ? defaultOutOfMonthDayColor
                                   : Colors.grey),
@@ -164,7 +164,7 @@ class NeatCleanCalendarTile extends StatelessWidget {
                       children: events!.map((event) {
                         eventCount++;
                         // Show a maximum of 3 dots.
-                        if (eventCount > 3) return Container();
+                        if (eventCount > 3 || event.summary == 'weekend') return Container();
                         return Container(
                           margin:
                               EdgeInsets.only(left: 2.0, right: 2.0, top: 1.0),
