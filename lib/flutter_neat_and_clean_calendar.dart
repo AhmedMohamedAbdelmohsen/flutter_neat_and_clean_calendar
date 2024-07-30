@@ -107,6 +107,7 @@ class Calendar extends StatefulWidget {
   final DatePickerType? datePickerType;
   final bool hideArrows;
   final bool hideTodayIcon;
+  final double childAspectRatio;
   @Deprecated(
       'Use `eventsList` instead. Will be removed in NeatAndCleanCalendar 0.4.0')
   final Map<DateTime, List<NeatCleanCalendarEvent>>? events;
@@ -155,6 +156,7 @@ class Calendar extends StatefulWidget {
     this.eventListBuilder,
     this.datePickerType = DatePickerType.hidden,
     this.hideTodayIcon = false,
+    this.childAspectRatio = 1.5,
     this.hideArrows = false,
     this.defaultDayColor = Colors.black87,
     this.defaultOutOfMonthDayColor,
@@ -471,7 +473,7 @@ class _CalendarState extends State<Calendar> {
         child: Column(
           children: <Widget>[
             GridView.count(
-              childAspectRatio: 1.0,
+              childAspectRatio: widget.childAspectRatio,
               primary: false,
               shrinkWrap: true,
               crossAxisCount: 7,
