@@ -577,7 +577,7 @@ class _CalendarState extends State<Calendar> {
 
   TextStyle? configureDateStyle(monthStarted, monthEnded) {
     TextStyle? dateStyles;
-    final TextStyle? body1Style = Theme.of(context).textTheme.bodyText2;
+    final TextStyle? body1Style = Theme.of(context).textTheme.bodyMedium;
 
     if (isExpanded) {
       final TextStyle body1StyleDisabled = body1Style!.copyWith(
@@ -711,7 +711,7 @@ class _CalendarState extends State<Calendar> {
                                   Text(event.summary,
                                       style: Theme.of(context)
                                           .textTheme
-                                          .subtitle2),
+                                          .titleMedium),
                                   SizedBox(
                                     height: 10.0,
                                   ),
@@ -756,8 +756,8 @@ class _CalendarState extends State<Calendar> {
       crossAxisAlignment: CrossAxisAlignment.end,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text(start, style: Theme.of(context).textTheme.bodyText1),
-        Text(end, style: Theme.of(context).textTheme.bodyText1),
+        Text(start, style: Theme.of(context).textTheme.bodyLarge),
+        Text(end, style: Theme.of(context).textTheme.bodyLarge),
       ],
     );
   }
@@ -774,7 +774,7 @@ class _CalendarState extends State<Calendar> {
         children: [
           Text(
             widget.allDayEventText,
-            style: Theme.of(context).textTheme.bodyText1,
+            style: Theme.of(context).textTheme.bodyLarge,
           ),
         ],
       );
@@ -799,8 +799,8 @@ class _CalendarState extends State<Calendar> {
       crossAxisAlignment: CrossAxisAlignment.end,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text(start, style: Theme.of(context).textTheme.bodyText1),
-        Text(end, style: Theme.of(context).textTheme.bodyText1),
+        Text(start, style: Theme.of(context).textTheme.bodyLarge),
+        Text(end, style: Theme.of(context).textTheme.bodyLarge),
       ],
     );
   }
